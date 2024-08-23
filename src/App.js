@@ -11,22 +11,22 @@ import { Curricular } from './components/Curricular';
 function App() {
   return (
     <div className="App">
-      <NavBar/>
-      <div style={{marginTop: -70}}>
-      <Banner/>
+      <NavBar />
+      <div style={{ marginTop: -70 }}>
+        <Banner />
       </div>
-      <Skills/>
-      <div style={{marginTop: -40}}>
-      <Curricular/>
+      <Skills />
+      <div style={{ marginTop: -40 }}>
+        <Curricular />
       </div>
-      <div style={{marginTop: 60}}>
-      <Projects/>
+      <div style={{ marginTop: 60 }}>
+        <Projects />
       </div>
       <div>
-      <Contact/>
+        <Contact />
       </div>
-      <div style={{marginTop: -170}}>
-      <Footer/>
+      <div style={{ marginTop: -170 }}>
+        <Footer />
       </div>
     </div>
   );
