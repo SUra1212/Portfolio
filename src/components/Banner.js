@@ -69,12 +69,12 @@ export const Banner = () => {
               >
                 <button
                   style={{
-                    backgroundColor: "#aa367c",  
-                    color: "#fff",              
-                    padding: "10px 20px",        
-                    borderRadius: "5px",         
-                    cursor: "pointer",          
-                    transition: "background-color 0.3s ease" 
+                    backgroundColor: "#aa367c",
+                    color: "#fff",
+                    padding: "10px 20px",
+                    borderRadius: "5px",
+                    cursor: "pointer",
+                    transition: "background-color 0.3s ease"
                   }}
                   onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#4a2fbd"}
                   onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "#aa367c"}

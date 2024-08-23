@@ -106,7 +106,7 @@ export const Contact = () => {
                     </Row>
                   </form>
                   <br />
-                  <div className="contact-card1"> 
+                  <div className="contact-card1">
                     <h5><i class="fa-solid fa-phone"></i>Phone: 070-4110950</h5>
                     <h5><i class="fa-solid fa-envelope"></i>Email: surathc004@gmail.com</h5>
                   </div>
