@@ -26,9 +26,6 @@ export const Footer = () => {
               <a href="https://www.facebook.com/surath.chathuranga.14?mibextid=kFxxJD">
                 <img src={NavIcon2} alt="facebook" />
               </a>
-              <a href="https://medium.com/@surathc004">
-                <img src={NavIcon3} alt="medium" />
-              </a>
               <a href="https://github.com/SUra1212">
                 <img src={NavIcon4} alt="github" />
               </a>

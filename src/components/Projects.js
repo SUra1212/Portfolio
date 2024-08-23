@@ -1,4 +1,5 @@
-import { Col, Container, Nav, Row, Tab } from "react-bootstrap";
+import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
+import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/AgarRiskPro.png";
 import projImg2 from "../assets/img/Harcourts.png";
 import projImg3 from "../assets/img/Ticket.png";
@@ -8,11 +9,14 @@ import projImg6 from "../assets/img/Recipe.jpeg";
 import projImg7 from "../assets/img/healthCare.png";
 import projImg8 from "../assets/img/mernProject.jpg";
 import projImg9 from "../assets/img/Movie.png";
+import colorSharp2 from "../assets/img/color-sharp2.png";
+import 'animate.css';
+import TrackVisibility from 'react-on-screen';
 import comingSoon from "../assets/img/ComingSoon.png";
-import { ProjectCard } from "./ProjectCard";
 
 export const Projects = () => {
-  const projectsTab1 = [
+
+  const projects = [
     {
       title: "AgriOne",
       description:
@@ -34,9 +38,6 @@ export const Projects = () => {
       imgUrl: projImg1,
       gitHubUrl: "https://github.com/SUra1212/AgarRiskPro",
     },
-  ];
-
-  const projectsTab2 = [
     {
       title: "Harcourts",
       description:
@@ -49,19 +50,18 @@ export const Projects = () => {
       description:
         "Designed and developed a Social Media application using swiftUI",
       imgUrl: projImg5,
-      gitHubUrl: "",
+      gitHubUrl: "https://github.com/SUra1212/Social_Media_App",
     },
     {
       title: "Recipe Application",
       description:
         "Designed and developed a Recipe application using swiftUI",
       imgUrl: projImg6,
-      gitHubUrl: "",
+      gitHubUrl: "https://github.com/SUra1212/Recipe_App",
     },
-
   ];
 
-  const projectsTab3 = [
+  const projects1 = [
     {
       title:
         "Cargo Management System",
@@ -86,18 +86,19 @@ export const Projects = () => {
       imgUrl: projImg9,
       gitHubUrl: "https://github.com/SUra1212/Movie-Booking-Resevation",
     },
-
-  ];
+  ]
 
   return (
     <section className="project" id="projects">
       <Container>
-        <div className="skill-bx4">
-          <Row>
-            <Col>
-              <h2>PROJECTS</h2>
-              <br />
-              <Tab.Container id="project-tabs" defaultActiveKey="first">
+        <Row>
+          <Col size={12}>
+            <TrackVisibility>
+              {({ isVisible }) =>
+              <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
+                <h2>Projects</h2>
+                <br/><br/>
+                <Tab.Container id="project-tabs" defaultActiveKey="first">
                 <Nav
                   variant="pills"
                   className="nav-pills mb-5 justify-content-center align-items-center"
@@ -112,33 +113,23 @@ export const Projects = () => {
                   <Nav.Item>
                     <Nav.Link eventKey="third">Tab 03</Nav.Link>
                   </Nav.Item>
-                  <Nav.Item>
-                    <Nav.Link eventKey="fourth">Tab 04</Nav.Link>
-                  </Nav.Item>
                 </Nav>
                 <Tab.Content>
                   <Tab.Pane eventKey="first">
                     <Row style={{ marginTop: "40px" }}>
-                      {projectsTab1.map((project, index) => {
+                      {projects.map((project, index) => {
                         return <ProjectCard key={index} {...project} />;
                       })}
                     </Row>
                   </Tab.Pane>
                   <Tab.Pane eventKey="second">
                     <Row style={{ marginTop: "40px" }}>
-                      {projectsTab2.map((project, index) => {
+                      {projects1.map((project, index) => {
                         return <ProjectCard key={index} {...project} />;
                       })}
                     </Row>
                   </Tab.Pane>
                   <Tab.Pane eventKey="third">
-                    <Row style={{ marginTop: "40px" }}>
-                      {projectsTab3.map((project, index) => {
-                        return <ProjectCard key={index} {...project} />;
-                      })}
-                    </Row>
-                  </Tab.Pane>
-                  <Tab.Pane eventKey="fourth">
                     <div style={{ display: "flex", justifyContent: "center" }}>
                       <img
                         src={comingSoon}
@@ -149,11 +140,12 @@ export const Projects = () => {
                   </Tab.Pane>
                 </Tab.Content>
               </Tab.Container>
-            </Col>
-          </Row>
-        </div>
+              </div>}
+            </TrackVisibility>
+          </Col>
+        </Row>
       </Container>
-      {/* <img className="background-image-right" src={colorSharp2}></img> */}
+      <img className="background-image-right" src={colorSharp2}></img>
     </section>
-  );
-};
+  )
+}

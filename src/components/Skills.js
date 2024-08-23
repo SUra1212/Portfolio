@@ -1,32 +1,28 @@
+import meter1 from "../assets/img/meter1.svg";
 import meter2 from "../assets/img/meter2.svg";
 import meter3 from "../assets/img/meter3.svg";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import { useState } from "react";
-import skillsImg1 from "../assets/img/webdeveloper.png";
-import skillsImg2 from "../assets/img/gard.png";
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import colorSharp from "../assets/img/color-sharp.png"
 
 export const Skills = () => {
-  const [isOpen, setIsOpen] = useState(false)
-
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
-      items: 5,
+      items: 5
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 3,
+      items: 3
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 2,
+      items: 2
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
+      items: 1
+    }
   };
 
   return (
@@ -91,14 +87,9 @@ export const Skills = () => {
             </div>
           </div>
         </div>
-        <br /><br /> <br />
-
+        <br /><br /><br />
         <div className="row">
-          <div className="col-md-4 col-12">
-            <img className="image img-fluid" src={skillsImg1} alt="Header Img" />
-          </div>
-
-          <div className="col-md-8 col-12">
+          <div className="col">
             <div className="skill-bx1 wow zoomIn">
               <h2 style={{ marginBottom: "40px" }}>EXPERIENCE</h2>
               <div className="card-deck">
@@ -131,14 +122,8 @@ export const Skills = () => {
               </div>
             </div>
           </div>
-        </div>
 
-
-        <br /><br /> <br />
-
-        <div className="row">
-
-          <div className="col-md-8 col-12">
+          <div className="col">
             <div className="skill-bx2 wow zoomIn">
               <h2 style={{ marginBottom: "40px" }}>EDUCATION</h2>
               <div className="card-deck">
@@ -166,15 +151,12 @@ export const Skills = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-4 col-12">
-            <img className="image img-fluid" src={skillsImg2} alt="Header Img" />
-          </div>
         </div>
-        <br /><br /> <br />
 
-        {/* <div className="row">
+        <br /><br /><br />
+        <div className="row">
           <div className="col-12">
-            <div className="skill-bx wow zoomIn">
+            <div className="curricular-bx wow zoomIn">
               <h2 style={{ marginBottom: "40px" }}>
                 Co - Curricular Activities{" "}
               </h2>
@@ -182,7 +164,7 @@ export const Skills = () => {
               <Carousel
                 responsive={responsive}
                 infinite={true}
-                className="owl-carousel owl-theme skill-slider"
+                className="owl-carousel owl-theme curricular-slider"
               >
                 <div className="item">
                   <h5>International Conference on Advancements in Computing 2023
@@ -207,50 +189,10 @@ export const Skills = () => {
               </Carousel>
             </div>
           </div>
-        </div> */}
-        {/* <div className="row">
-          <div className="col-12">
-            <div className="skill-bx wow zoomIn">
-              <h2 style={{ marginBottom: "40px" }}>Memberships </h2>
+        </div>
 
-              <Carousel
-                responsive={responsive}
-                infinite={true}
-                className="owl-carousel owl-theme skill-slider"
-              >
-                <div className="item">
-                  <h5>
-                    Member of the junior prefect court of the college in the
-                    academic year 2009
-                  </h5>
-                </div>
-                <div className="item">
-                  <h5>Member of the Commerce Society 2017 - 2018</h5>
-                </div>
-                <div className="item">
-                  <h5>Member of the college dancing group</h5>
-                </div>
-                <div className="item">
-                  <h5>Member of the college swimming team</h5>
-                </div>
-                <div className="item">
-                  <h5>Member of Sri Lanka Girl Guide Association</h5>
-                </div>
-                <div className="item">
-                  <h5>Member of the Astronomical Society 2014 – 2015</h5>
-                </div>
-                <div className="item">
-                  <h5>Member of the College ICT Club 2015 - 2016</h5>
-                </div>
-                <div className="item">
-                  <h5>Member of the College Media Unit 2017- 2018</h5>
-                </div>
-              </Carousel>
-            </div>
-          </div>
-        </div> */}
       </div>
-      {/* <img className="background-image-left" src={clorsharp} alt="Image" /> */}
+      <img className="background-image-left" src={colorSharp} alt="Image" />
     </section>
-  );
-};
+  )
+}
