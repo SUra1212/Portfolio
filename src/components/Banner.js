@@ -60,7 +60,7 @@ export const Banner = () => {
             <p>
               Passionate and skilled software engineer with a robust foundation in programming and problem-solving. Proficient in multiple programming languages and development tools, with extensive experience in full-stack development, agile methodologies, and software testing. Demonstrated ability to design and implement scalable, efficient, and maintainable software solutions. Committed to staying up-to-date with emerging technologies and collaborating with cross-functional teams to deliver cutting-edge products.
             </p>
-            <div style={{ marginTop: -50 }}>
+            <div style={{ marginTop: -60 }}>
               <a
                 href="https://drive.google.com/file/d/1Nx6dK29L2B22a2B3hN6xp5eH_ppsZ3O2/view?usp=drive_link"
                 target="_blank"
@@ -83,7 +83,7 @@ export const Banner = () => {
                 </button>
               </a>
             </div>
-            <div style={{ marginTop: -15 }}>
+            <div style={{ marginTop: -35 }}>
               <a href="#connect" style={{ textDecoration: "none" }}>
                 <button onClick={() => console.log("Connect!")}>
                   Let's Connect <ArrowRightCircle size={25} />

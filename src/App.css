@@ -388,7 +388,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .background-image-left {
-  top: 28%;
+  top: 10%;
   position: absolute;
   bottom: 0;
   width: 40%;
@@ -545,7 +545,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .background-image-right {
-  top: 20%;
+  top: -65%;
   position: absolute;
   bottom: 0;
   width: 35%;
@@ -787,7 +787,7 @@ font-size: 0.8rem;
 .card {
   flex: 1 1 calc(50% - 20px);
   margin: 10px;
-  background-color: #f0eded !important;
+  background-color: #dedede !important;
   border-radius: 40px !important;
   border: black !important;
   overflow: hidden;
@@ -842,7 +842,7 @@ font-size: 0.8rem;
   background: #151515;
   border-radius: 50px;
   text-align: center;
-  padding: 60px 15px;
+  padding: 50px 8px;
   width: 100%;
   /* Full width */
 }
@@ -851,8 +851,8 @@ font-size: 0.8rem;
   background: #151515;
   border-radius: 50px;
   text-align: center;
-  padding: 60px 15px;
-  margin-bottom: 7%;
+  padding: 44px 8px;
+  margin-bottom: 10%;
   width: 100%;
   /* Full width */
 }

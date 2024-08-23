@@ -10,7 +10,6 @@ import projImg7 from "../assets/img/healthCare.png";
 import projImg8 from "../assets/img/mernProject.jpg";
 import projImg9 from "../assets/img/Movie.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
-import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 import comingSoon from "../assets/img/ComingSoon.png";
 
