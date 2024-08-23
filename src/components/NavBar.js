@@ -1,13 +1,17 @@
-import { useEffect, useState } from "react";
-import { Navbar, Container, Nav } from "react-bootstrap";
-import logo from "../assets/img/logo.png";
-import NavIcon1 from "../assets/img/nav-icon1.svg";
-import NavIcon2 from "../assets/img/nav-icon2.svg";
-import NavIcon3 from "../assets/img/nav-icon3.svg";
-import NavIcon4 from "../assets/img/nav-icon4.svg";
+import { useState, useEffect } from "react";
+import { Navbar, Nav, Container } from "react-bootstrap";
+import logo from '../assets/img/logo.svg';
+import navIcon1 from '../assets/img/nav-icon1.svg';
+import navIcon2 from '../assets/img/nav-icon2.svg';
+import navIcon3 from '../assets/img/nav-icon4.svg';
+import { HashLink } from 'react-router-hash-link';
+import {
+  BrowserRouter as Router
+} from "react-router-dom";
 
 export const NavBar = () => {
-  const [link, setLink] = useState("home");
+
+  const [activeLink, setActiveLink] = useState('home');
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -17,93 +21,52 @@ export const NavBar = () => {
       } else {
         setScrolled(false);
       }
-    };
+    }
+
     window.addEventListener("scroll", onScroll);
 
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [])
 
-  const onUpdateLink = (value) => {
-    setLink(value);
-  };
+  const onUpdateActiveLink = (value) => {
+    setActiveLink(value);
+  }
 
   return (
-    <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
-      <Container>
-        <Navbar.Brand href="#home">
-          <img src={logo} alt="Logo" />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav">
-          <span className="navbar-toggler-icon"></span>
-        </Navbar.Toggle>
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link
-              href="#home"
-              style={{
-                fontWeight: 400,
-                color: link === "home" ? "gold" : "#ffffff",
-                letterSpacing: "0.8px",
-                padding: "0 25px",
-                fontSize: 18,
-                opacity: 0.75,
-              }}
-              onClick={() => onUpdateLink("home")}
-            >
-              Home
-            </Nav.Link>
-            <Nav.Link
-              href="#skills"
-              style={{
-                fontWeight: 400,
-                color: link === "skills" ? "gold" : "#ffffff",
-                letterSpacing: "0.8px",
-                padding: "0 25px",
-                fontSize: 18,
-                opacity: 0.75,
-              }}
-              onClick={() => onUpdateLink("skills")}
-            >
-              Qulifications
-            </Nav.Link>
-            <Nav.Link
-              href="#projects"
-              style={{
-                fontWeight: 400,
-                color: link === "projects" ? "gold" : "#ffffff",
-                letterSpacing: "0.8px",
-                padding: "0 25px",
-                fontSize: 18,
-                opacity: 0.75,
-              }}
-              onClick={() => onUpdateLink("projects")}
-            >
-              Projects
-            </Nav.Link>
-          </Nav>
-          <span className="navbar-text">
-            <div className="social-icon">
+    <Router>
+      <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
+        <Container>
+          <Navbar.Brand href="/">
+            <h1 style={{color: "white"}}>SURATH</h1>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav">
+            <span className="navbar-toggler-icon"></span>
+          </Navbar.Toggle>
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ms-auto">
+              <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
+              <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>Qualifications</Nav.Link>
+              <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
+            </Nav>
+            <span className="navbar-text">
+              <div className="social-icon">
               <a href="https://www.linkedin.com/in/surath-chathuranga-arachchi-bbb04a220/">
-                <img src={NavIcon1} alt="LinkenIn" />
+                <img src={navIcon1} alt="LinkenIn" />
               </a>
               <a href="https://www.facebook.com/surath.chathuranga.14?mibextid=kFxxJD">
-                <img src={NavIcon2} alt="facebook" />
-              </a>
-              <a href="https://medium.com/@surathc004">
-                <img src={NavIcon3} alt="medium" />
+                <img src={navIcon2} alt="facebook" />
               </a>
               <a href="https://github.com/SUra1212">
-                <img src={NavIcon4} alt="github" />
+                <img src={navIcon3} alt="github" />
               </a>
-            </div>
-            <a href="#connect">
-              <button className="vvd" onClick={() => console.log("connect")}>
-                <span>Let's Connect</span>
-              </button>
-            </a>
-          </span>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-  );
-};
+              </div>
+              <HashLink to='#connect'>
+                <button className="vvd"><span>Let’s Connect</span></button>
+              </HashLink>
+            </span>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </Router>
+  )
+}

@@ -16,5 +16,5 @@ export const ProjectCard = ({ title, description, imgUrl, gitHubUrl }) => {
         </div>
       </div>
     </Col>
-  );
-};
+  )
+}
